@@ -43,9 +43,8 @@
           <div class="form__row">
             <label class="form__label" for="email">E-mail <sup>*</sup></label>
 
-            <input class="form__input form__input--error" type="text" name="email" id="email" value="" placeholder="Введите e-mail">
+            <input class="form__input" type="text" name="email" id="email" value="" placeholder="Введите e-mail">
 
-            <p class="form__message">E-mail введён некорректно</p>
           </div>
 
           <div class="form__row">
@@ -57,6 +56,9 @@
           <div class="form__row form__row--controls">
             <input class="button" type="submit" name="" value="Войти">
           </div>
+
+            <p style="color: red;"> <?php echo $_SESSION['message']; ?> </p>
+
         </form>
 
       </main>

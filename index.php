@@ -1,6 +1,8 @@
 <?php
 // показывать или нет выполненные задачи
+session_start();
 $show_complete_tasks = rand(0, 1);
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -28,9 +30,21 @@ $show_complete_tasks = rand(0, 1);
 
                 <div class="main-header__side-item user-menu">
                     <div class="user-menu__data">
-                        <p>Константин</p>
+                        <?php 
+                            if($_SESSION['user']){
+                                ?>
+                                    <img src= "<?= $_SESSION['user']['avatar']; ?>" width="40" height="40" alt="error">
+                                    <p><?= $_SESSION['user']['name']; ?></p>
 
-                        <a href="#">Выйти</a>
+                                    <a href="pages/unset_acc.php">Выйти</a>
+                                <?php
+                            }else {
+                                ?>
+                                    <a href="pages/register.php">Регистрация</a>
+                                <?php
+                            }
+                        ?>
+                        
                     </div>
                 </div>
             </div>
